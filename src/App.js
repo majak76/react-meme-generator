@@ -1,23 +1,49 @@
 import './App.css';
+import { useState } from 'react';
 import logo from './logo.svg';
 
 export default function App() {
+  const [topText, setTopText] = useState('hello');
+  const [bottomText, setBottomText] = useState('hello');
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <form>
+        <label>
+          Top Text:{' '}
+          <input
+            value={topText}
+            onChange={(event) => {
+              setTopText(event.currentTarget.value);
+            }}
+          />
+        </label>
+        <br />
+        <label>
+          Bottom Text:
+          <input
+            value={bottomText}
+            onChange={(event) => {
+              setBottomText(event.currentTarget.value);
+            }}
+          />
+        </label>
+
+        <br />
+        <label>
+          Meme Text:
+          <input id="lname" name="lname" />
+        </label>
+
+        <br />
+        <br />
+      </form>
+
+      <button> Download</button>
+
+      <img
+        src={`https://api.memegen.link/images/buzz/${topText}/hello_world.png`}
+        alt="Girl in a jacket"
+      />
+    </>
   );
 }
