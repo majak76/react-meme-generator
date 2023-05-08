@@ -5,6 +5,7 @@ import logo from './logo.svg';
 export default function App() {
   const [topText, setTopText] = useState('hello');
   const [bottomText, setBottomText] = useState('hello');
+  const [memeText, setMemeText] = useState('hello');
   return (
     <>
       <form>
@@ -19,7 +20,7 @@ export default function App() {
         </label>
         <br />
         <label>
-          Bottom Text:
+          Bottom Text:{' '}
           <input
             value={bottomText}
             onChange={(event) => {
@@ -31,7 +32,12 @@ export default function App() {
         <br />
         <label>
           Meme Text:
-          <input id="lname" name="lname" />
+          <input
+            value={memeText}
+            onChange={(event) => {
+              setMemeText(event.currentTarget.value);
+            }}
+          />
         </label>
 
         <br />
