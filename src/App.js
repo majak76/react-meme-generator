@@ -3,14 +3,14 @@ import { useState } from 'react';
 import logo from './logo.svg';
 
 export default function App() {
-  const [topText, setTopText] = useState('hello');
-  const [bottomText, setBottomText] = useState('hello');
-  const [memeText, setMemeText] = useState('hello');
+  const [topText, setTopText] = useState('');
+  const [bottomText, setBottomText] = useState('');
+  const [memeText, setMemeText] = useState('');
   return (
     <>
       <form>
         <label>
-          Top Text:{' '}
+          Top Text:
           <input
             value={topText}
             onChange={(event) => {
@@ -20,7 +20,7 @@ export default function App() {
         </label>
         <br />
         <label>
-          Bottom Text:{' '}
+          Bottom Text:
           <input
             value={bottomText}
             onChange={(event) => {
@@ -47,7 +47,7 @@ export default function App() {
       <button> Download</button>
 
       <img
-        src={`https://api.memegen.link/images/buzz/${topText}/hello_world.png`}
+        src={`https://api.memegen.link/images/${memeText}/${topText}/${bottomText}.png`}
         alt="Girl in a jacket"
       />
     </>
